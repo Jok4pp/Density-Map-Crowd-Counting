@@ -59,34 +59,22 @@ Below is an example of a qualitative comparison between the input image, the pre
 
 The model captures crowd distributions well, although high-frequency regions can occasionally be misestimated.
 
----
-
 ## Quantitative Results
 
 Evaluation was performed using standard crowd-counting metrics. The choice of dataset had a major influence on performance:
 
 | Model | Year | Mean Absolute Error | Mean Squared Error |
 |-------|------|---------------------|--------------------|
-| MCNN [9]| 2016 | 277.0 | 426.0 |
-| Cascaded-MTL [18] | 2017 | 251.9 | 513.9 |
-| CSRNet [20] | 2018 | 120.3 | 208.5 |
-| HA-CNN [7] | 2019 | 118.1 | 180.4 |
-| IA-DCCN [24] | 2019 | 125.3 | 185.7 |
-| PCC Net [25] | 2020 | 246.4 | 247.1 |
-| ASNet [26] | 2020 | 91.6 | 159.7 |
-| DFN [27] | 2021 | 218.2 | 357.4 |
-| PFC [10] | 2021 | 84.3 | 141.2 |
-| CFA-Net [12] | 2021 | 89.0 | 152.3 |
-| Lw-Count [8] | 2022 | 149.7 | 238.4 |
-| DMCNet [5] | 2023 | 96.5 | 164.2 |
-| Gramformer [6] | 2024 | 76.7 | 129.5 |
+| MCNN [1]| 2016 | 277.0 | 426.0 |
+| Cascaded-MTL [2] | 2017 | 251.9 | 513.9 |
+| CFA-Net [3] | 2021 | 89.0 | 152.3 |
+| DMCNet [4] | 2023 | 96.5 | 164.2 |
+| Gramformer [5] | 2024 | 76.7 | 129.5 |
 | **This Model** | 2025 | 154.9 | 260.7 |
 
 
 Older models like MCNN and Cascaded-MTL show relatively high MAE and MSE, reflecting limitations in early architectures. 
-Compared to more complex models with attention mechanisms (e.g., CFANet [12], DMCNet [5], Gramformer [6]), this simple U-Net shows larger average deviations (up to ~49.5%) due to errors in high-frequency regions and serves as a baseline for further improvements.
-
----
+Compared to more complex models with attention mechanisms (e.g., CFANet, DMCNet, Gramformer), this simple U-Net shows larger average deviations (up to ~49.5%) due to errors in high-frequency regions. It therefore only serves as a baseline for further improvements.
 
 ## Limitations
 
@@ -95,8 +83,6 @@ Compared to more complex models with attention mechanisms (e.g., CFANet [12], DM
 - High variability in combined datasets reduces robustness
 - Does not achieve state-of-the-art performance  
   
----
-
 ## Future Work
 
 Potential extensions include:
@@ -107,9 +93,29 @@ Potential extensions include:
 - Alternative loss functions for improved performance  
 - Video-based crowd counting for temporal consistency
 
----
 
-## Structure
+## References
 
-The repository contains:
+[1] Yingying Zhang et al. “Single-Image Crowd Counting via Multi-Column Convolutional Neural Network”.  
+In: *2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, Aug. 2016, pp. 589–597.  
+https://doi.org/10.1109/CVPR.2016.70  
+
+[2] Vishwanath A. Sindagi and Vishal M. Patel. “CNN-Based Cascaded Multi-Task Learning of High-Level Prior and Density Estimation for Crowd Counting”.  
+In: *2017 IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)*, June 2017, pp. 1–6.  
+https://doi.org/10.1109/AVSS.2017.8078491  
+
+[3] Liangzi Rong and Chunping Li. “Coarse- and Fine-Grained Attention Network with Background-Aware Loss for Crowd Density Map Estimation”.  
+In: *Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision*, Jan. 2021, pp. 3675–3684.  
+https://doi.org/10.1109/WACV48630.2021.00372  
+
+[4] Mingjie Wang et al. “Dynamic Mixture of Counter Network for Location-Agnostic Crowd Counting”.  
+In: *2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)*, Jan. 2023, pp. 167–177.  
+https://doi.org/10.1109/WACV56688.2023.00025  
+
+[5] Hui Lin et al. “Gramformer: Learning Crowd Counting via Graph-Modulated Transformer”.  
+In: *Proceedings of the AAAI Conference on Artificial Intelligence*, Jan. 2024, pp. 3395–3403.  
+https://doi.org/10.1609/aaai.v38i4.28126  
+
+
+
 
