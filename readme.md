@@ -4,8 +4,6 @@ This project implements a crowd-counting approach that reconstructs density maps
 
 The main goal is to provide a reliable baseline for crowd counting while exploring the effect of dataset selection and preprocessing strategies on model performance.
 
----
-
 ## Density Maps
 
 Density maps are continuous representations of crowd distributions in an image. Each pixel encodes the estimated density of people in that local region. By summing over all pixel values, the total crowd count can be estimated. They are commonly used in crowd-counting tasks because they allow the model to focus on local variations in crowd density rather than predicting a single global count.
@@ -17,8 +15,6 @@ The model is based on a U-Net architecture. It is designed for image-to-image re
 <p align="center">
   <img src="assets/U-Net-Crowd-Structure.png" width="700"/>
 </p>
-
----
 
 ## Preprocessing & Training
 
@@ -32,9 +28,8 @@ However the high resolution input images presented GPU memory challenges, causin
 - Shortened training time by approximately 3x  
 - Preserved all relevant image information  
 
-Preliminary experiments confirmed the model and preprocessing pipeline function correctly for high-resolution inputs.
+Preliminary experiments confirmed the model and preprocessing pipeline function correctly for high resolution inputs.
 
----
 
 ## Visual Comparison
 
@@ -42,22 +37,22 @@ Below is an example of a qualitative comparison between the input image, the pre
 
 <p align="center">
   <figure style="display: inline-block; margin: 10px; text-align: center;">
-    <img src="assets/crowd_input.jpg" width="250" alt="Input"/>
+    <img src="assets/input.jpg" width="250" alt="Input"/>
     <figcaption>Input Image</figcaption>
   </figure>
 
   <figure style="display: inline-block; margin: 10px; text-align: center;">
-    <img src="assets/crowd_pred.jpg" width="250" alt="Prediction"/>
+    <img src="assets/pred.jpg" width="250" alt="Prediction"/>
     <figcaption>Predicted Density Map</figcaption>
   </figure>
 
   <figure style="display: inline-block; margin: 10px; text-align: center;">
-    <img src="assets/crowd_gt.jpg" width="250" alt="Ground Truth"/>
+    <img src="assets/gt.jpg" width="250" alt="Ground Truth"/>
     <figcaption>Ground Truth Density Map</figcaption>
   </figure>
 </p>
 
-The model captures crowd distributions well, although high-frequency regions can occasionally be misestimated.
+The model captures crowd distributions well, although high-frequency regions are occasionally misestimated.
 
 ## Quantitative Results
 
@@ -85,10 +80,8 @@ Compared to more complex models with attention mechanisms (e.g., CFANet, DMCNet,
   
 ## Future Work
 
-Potential extensions include:
-
 - Adding attention mechanisms for better localization  
-- Exploring lightweight models for faster inference  
+- Using lightweight models for faster inference  
 - Semi-supervised training with partially annotated data  
 - Alternative loss functions for improved performance  
 - Video-based crowd counting for temporal consistency
@@ -96,25 +89,15 @@ Potential extensions include:
 
 ## References
 
-[1] Yingying Zhang et al. “Single-Image Crowd Counting via Multi-Column Convolutional Neural Network”.  
-In: *2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, Aug. 2016, pp. 589–597.  
-https://doi.org/10.1109/CVPR.2016.70  
+[1] Yingying Zhang et al. *Single-Image Crowd Counting via Multi-Column Convolutional Neural Network*. In: *2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, Aug. 2016, pp. 589–597. doi: [10.1109/CVPR.2016.70](https://doi.org/10.1109/CVPR.2016.70)
 
-[2] Vishwanath A. Sindagi and Vishal M. Patel. “CNN-Based Cascaded Multi-Task Learning of High-Level Prior and Density Estimation for Crowd Counting”.  
-In: *2017 IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)*, June 2017, pp. 1–6.  
-https://doi.org/10.1109/AVSS.2017.8078491  
+[2] Vishwanath A. Sindagi and Vishal M. Patel. *CNN-Based Cascaded Multi-Task Learning of High-Level Prior and Density Estimation for Crowd Counting*. In: *2017 IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)*, June 2017, pp. 1–6. doi: [10.1109/AVSS.2017.8078491](https://doi.org/10.1109/AVSS.2017.8078491)
 
-[3] Liangzi Rong and Chunping Li. “Coarse- and Fine-Grained Attention Network with Background-Aware Loss for Crowd Density Map Estimation”.  
-In: *Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision*, Jan. 2021, pp. 3675–3684.  
-https://doi.org/10.1109/WACV48630.2021.00372  
+[3] Liangzi Rong and Chunping Li. *Coarse- and Fine-Grained Attention Network with Background-Aware Loss for Crowd Density Map Estimation*. In: *Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision*, Jan. 2021, pp. 3675–3684. doi: [10.1109/WACV48630.2021.00372](https://doi.org/10.1109/WACV48630.2021.00372)
 
-[4] Mingjie Wang et al. “Dynamic Mixture of Counter Network for Location-Agnostic Crowd Counting”.  
-In: *2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)*, Jan. 2023, pp. 167–177.  
-https://doi.org/10.1109/WACV56688.2023.00025  
+[4] Mingjie Wang et al. *Dynamic Mixture of Counter Network for Location-Agnostic Crowd Counting*. In: *2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)*, Jan. 2023, pp. 167–177. doi: [10.1109/WACV56688.2023.00025](https://doi.org/10.1109/WACV56688.2023.00025)
 
-[5] Hui Lin et al. “Gramformer: Learning Crowd Counting via Graph-Modulated Transformer”.  
-In: *Proceedings of the AAAI Conference on Artificial Intelligence*, Jan. 2024, pp. 3395–3403.  
-https://doi.org/10.1609/aaai.v38i4.28126  
+[5] Hui Lin et al. *Gramformer: Learning Crowd Counting via Graph-Modulated Transformer*. In: *Proceedings of the AAAI Conference on Artificial Intelligence*, Jan. 2024, pp. 3395–3403. doi: [10.1609/aaai.v38i4.28126](https://doi.org/10.1609/aaai.v38i4.28126)
 
 
 
