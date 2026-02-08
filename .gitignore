@@ -1,0 +1,5 @@
+.venv
+__pycache__
+image_output
+model_output
+data
