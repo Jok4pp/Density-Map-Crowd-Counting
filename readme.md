@@ -36,23 +36,21 @@ Preliminary experiments confirmed the model and preprocessing pipeline function 
 Below is an example of a qualitative comparison between the input image, the predicted density map, and the ground truth density map.
 
 <p align="center">
-  <figure style="display: inline-block; margin: 10px; text-align: center;">
-    <img src="assets/input.jpg" width="250" alt="Input"/>
-    <figcaption>Input Image</figcaption>
-  </figure>
-
-  <figure style="display: inline-block; margin: 10px; text-align: center;">
-    <img src="assets/pred.jpg" width="250" alt="Prediction"/>
-    <figcaption>Predicted Density Map</figcaption>
-  </figure>
-
-  <figure style="display: inline-block; margin: 10px; text-align: center;">
-    <img src="assets/gt.jpg" width="250" alt="Ground Truth"/>
-    <figcaption>Ground Truth Density Map</figcaption>
-  </figure>
+  <img src="assets/input.jpg" width="300" alt="SDR Input"/><br>
+  <b>Input Image</b>
 </p>
 
-The model captures crowd distributions well, although high-frequency regions are occasionally misestimated.
+<p align="center">
+  <img src="assets/pred.jpg" width="300" alt="HDR Prediction"/><br>
+  <b>Predicted Density Map</b>
+</p>
+
+<p align="center">
+  <img src="assets/gt.jpg" width="300" alt="Ground Truth HDR"/><br>
+  <b>Ground Truth Density Map</b>
+</p>
+
+The model captures crowd distributions well, although especially high-frequency regions are occasionally misestimated.
 
 ## Quantitative Results
 
